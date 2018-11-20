@@ -23,19 +23,18 @@ public class FrogSimulation
     {
         int frogDist = 0;
         int hopNum = 0;
-        int jump = hopDistance();
+        int jump;
+        System.out.print("Goal: " + goalDistance + " Hops:  ");
 
         while(hopNum<maxHops)
         {
+            jump = hopDistance();
+            System.out.print(jump + "  ");
             frogDist += jump;
 
-            String out = "";
-
-            out = "Goal: " + goalDistance;
-            out += "Hops:  ";
-            
             if(frogDist<0)
             {
+                System.out.print("Failed Reached Negative Distance");
                 return(false);
             }
             else
