@@ -34,18 +34,20 @@ public class FrogSimulation
 
             if(frogDist<0)
             {
-                System.out.print("Failed Reached Negative Distance");
+                System.out.print("Failed Reached Negative Distance\n");
                 return(false);
             }
             else
             {
                 if(frogDist >= goalDistance)
                 {
+                    System.out.print("Success Final Distance: " + frogDist + "\n");
                     return(true);
                 }
             }
             hopNum++;
         }
+        System.out.print("Failed Final Distance: " + frogDist + "\n");
         return(false);
     }
 
