@@ -3,12 +3,21 @@ public class FrogSimulation
     private int goalDistance;
     private int maxHops;
 
+    /**
+     * constructor for FrogSimulation
+     * @param dist distance the frog is trying to reach
+     * @param numHops max number of hops frog can make in one simulation
+     */
     public FrogSimulation(int dist, int numHops)
     {
         goalDistance = dist;
         maxHops = numHops;
     }
 
+    /**
+     * returns a random int representing the distance the frog jumped
+     * @return a random int representing the distance the frog jumped
+     */
     private int hopDistance()
     {
         int mult = 1;
@@ -19,6 +28,10 @@ public class FrogSimulation
         return((int)(Math.random()*10+1)*mult);
     }
 
+    /**
+     * runs one simulation using the goalDistance and maxHops
+     * @return a boolean representing whether a frog passed the goal or not
+     */
     public boolean simulate()
     {
         int frogDist = 0;
@@ -51,6 +64,11 @@ public class FrogSimulation
         return(false);
     }
 
+    /**
+     * runs frog simulation for num times and returns a decimal representing the number of successes
+     * @param num number of times to run simulation
+     * @return double representing the proportion of successes out of all the simulations
+     */
     public double runSimulations(int num)
     {
         int success = 0;
